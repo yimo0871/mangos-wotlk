@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Checkout target repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: yimo0871/mangos-wotlk
         token: ${{ secrets.GITHUB_TOKEN }}
