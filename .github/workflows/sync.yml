@@ -20,15 +20,16 @@ jobs:
       run: |
         git config user.name "yimo0871"
         git config user.email "42022883@qq.com"
+        git config --global user.email "42022883@qq.com"
+        git config --global user.name "yimo0871"
 
     - name: Add upstream repository
-      run: git remote add upstream https://github.com/cmangos/mangos-wotlk.git
-
-    - name: Fetch upstream changes
-      run: git fetch upstream
+      run: |
+        git remote add upstream https://github.com/cmangos/mangos-wotlk.git
+        git fetch upstream
 
     - name: Merge upstream changes
       run: |
         git checkout master
-        git merge upstream/master
+        git merge upstream/master --allow-unrelated-histories
         git push origin master
